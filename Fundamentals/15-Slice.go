@@ -47,7 +47,6 @@ func main() {
 	fmt.Println("************** deleting some elements ***************")
 	z := append(s[:4], s[9:]...)
 	fmt.Println(z)
-
 	a := make([]int, 5, 7)
 	println(a)
 	a = append(a, 1)

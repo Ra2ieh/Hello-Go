@@ -1,0 +1,80 @@
+From 30cd6a03e555ead44da614c652d748440807677d Mon Sep 17 00:00:00 2001
+From: Ra2ieh <razieh.naeemi@outlook.com>
+Date: Sat, 3 Jun 2023 20:05:28 +0430
+Subject: [PATCH 1/2] anonymous function
+
+---
+ Fundamentals/14-Array.go              |  6 +++++-
+ Fundamentals/15-Slice.go              |  6 +++++-
+ Fundamentals/22-AnonymousFunctions.go | 27 +++++++++++++++++++++++++++
+ 3 files changed, 37 insertions(+), 2 deletions(-)
+ create mode 100644 Fundamentals/22-AnonymousFunctions.go
+
+diff --git a/Fundamentals/14-Array.go b/Fundamentals/14-Array.go
+index bde2690..4f82765 100644
+--- a/Fundamentals/14-Array.go
++++ b/Fundamentals/14-Array.go
+@@ -8,5 +8,9 @@ func main() {
+ 	x[2] = 4
+ 	fmt.Println(x)
+ 	fmt.Println(len(x))
+-
++	a := [4]int{10, 20, 30, 40}
++	fmt.Println(a)
++	var b [5]int
++	fmt.Println(b)
++	// has error : a=b
+ }
+diff --git a/Fundamentals/15-Slice.go b/Fundamentals/15-Slice.go
+index 9885058..fcd2c53 100644
+--- a/Fundamentals/15-Slice.go
++++ b/Fundamentals/15-Slice.go
+@@ -35,7 +35,11 @@ func main() {
+ 	fmt.Println("*****************************")
+ 	for i, v := range s {
+ 		fmt.Println(i, v)
+-	}
++	} //value semantic for range
++
++	for i := range s {
++		fmt.Println(i, s[i])
++	} //pointer semantic for range
+ 	//append to a slice
+ 	fmt.Println("************** append to a slice ***************")
+ 	s = append(s, 12, 14, 16, 18)
+diff --git a/Fundamentals/22-AnonymousFunctions.go b/Fundamentals/22-AnonymousFunctions.go
+new file mode 100644
+index 0000000..77ab96f
+--- /dev/null
++++ b/Fundamentals/22-AnonymousFunctions.go
+@@ -0,0 +1,27 @@
++package main
++
++import "fmt"
++
++func main() {
++	n := 1
++	//declare an anonymous function and call it
++	func() {
++		fmt.Println("n is : ", n)
++	}()
++	n++
++	//declare an anonymous function and assign it to a variable
++	f := func() {
++		fmt.Println("n is : ", n)
++	}
++	f()
++	n++
++	//defer the call of anonymous function till after main returns
++	defer func() {
++		fmt.Println("Defer func1 is : ", n)
++	}()
++	f()
++	n++
++	defer func() {
++		fmt.Println("Defer func2 is : ", n)
++	}()
++}
+-- 
+2.21.0.windows.1
+

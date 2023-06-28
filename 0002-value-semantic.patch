@@ -1,0 +1,43 @@
+From 75e11f68d240c7f762e88ae6b5846a12bc094ded Mon Sep 17 00:00:00 2001
+From: Ra2ieh <razieh.naeemi@outlook.com>
+Date: Mon, 5 Jun 2023 19:29:02 +0430
+Subject: [PATCH 2/2] value semantic
+
+---
+ Fundamentals/23-ValueSemantic.go | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+ create mode 100644 Fundamentals/23-ValueSemantic.go
+
+diff --git a/Fundamentals/23-ValueSemantic.go b/Fundamentals/23-ValueSemantic.go
+new file mode 100644
+index 0000000..8edd9e7
+--- /dev/null
++++ b/Fundamentals/23-ValueSemantic.go
+@@ -0,0 +1,24 @@
++package main
++
++import "fmt"
++
++func main() {
++	a := [4]string{"apple", "green", "orange", "yellow"}
++	//pointer semantic
++	for i := range a {
++		if i == 1 {
++			a[1] = "me"
++		}
++		fmt.Println(i, &a[i], a[i])
++
++	}
++	//value semantic
++	fmt.Printf("\n\n")
++	for i, v := range a {
++		if i == 1 {
++			a[1] = "you"
++		}
++		fmt.Println(i, &v, v)
++
++	}
++}
+-- 
+2.21.0.windows.1
+

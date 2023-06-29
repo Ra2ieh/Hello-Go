@@ -9,6 +9,7 @@ func main() {
 		"Sisi":  15,
 		"pishi": 2,
 	} //map[]
+	fmt.Println("Welcome to GO")
 	fmt.Println(m)
 	fmt.Println(m["Razi"])
 	fmt.Println(m["Mami"])

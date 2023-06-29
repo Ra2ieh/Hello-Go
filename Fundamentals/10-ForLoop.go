@@ -13,6 +13,7 @@ func main() {
 	println(num)
 	num = 99 //assign
 	println(num)
+	
 	//blank identifier
 	n, _ := fmt.Println("print even number started...")
 	fmt.Println(n)

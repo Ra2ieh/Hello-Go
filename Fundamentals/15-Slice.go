@@ -66,5 +66,4 @@ func main() {
 	fmt.Println("************** multi-dimensional ***************")
 	md := [][]int{s, y}
 	fmt.Println(md)
-	
 }

@@ -18,4 +18,5 @@ func main() {
 	fmt.Println(d)
 	fmt.Println(f)
 	fmt.Println(s)
+	// has error :f++
 }

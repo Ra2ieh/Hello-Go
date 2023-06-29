@@ -35,7 +35,11 @@ func main() {
 	fmt.Println("*****************************")
 	for i, v := range s {
 		fmt.Println(i, v)
-	}
+	} //value semantic for range
+
+	for i := range s {
+		fmt.Println(i, s[i])
+	} //pointer semantic for range
 	//append to a slice
 	fmt.Println("************** append to a slice ***************")
 	s = append(s, 12, 14, 16, 18)
@@ -61,4 +65,5 @@ func main() {
 	fmt.Println("************** multi-dimensional ***************")
 	md := [][]int{s, y}
 	fmt.Println(md)
+	
 }

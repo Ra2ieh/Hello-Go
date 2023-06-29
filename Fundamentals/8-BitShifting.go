@@ -21,7 +21,8 @@ func main() {
 	//kb := 1024
 	//mb := kb * 1024
 	//gb := mb * 1024
-
+	//test
+	
 	const (
 		_  = iota
 		kb = 1 << (iota * 10)
